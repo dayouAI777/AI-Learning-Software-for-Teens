@@ -1,19 +1,34 @@
 const lessons = [
   {
-    id: 'ai-basics', number: '01', title: 'AI 侦探出动！', shortTitle: '发现生活里的 AI', icon: '🔎', tone: 'purple', time: '3 分钟',
-    storyTitle: '相册怎么认出小猫的？', story: '米粒的相册把所有小猫照片自动放到了一起。它没有一只只问“这是猫吗”，那它是怎么认出来的？', concept: 'AI 是人们设计的计算机工具。它能从很多例子里找规律，帮我们完成一些任务；有时也会认错。',
-    missionTitle: '帮小侦探找出 AI', missionPrompt: '点一下你觉得用了 AI 的事情。',
-    choices: [
-      { icon: '📸', title: '相册认出猫咪', hint: '从照片里找特征', correct: true, feedback: '找到了！AI 看过许多照片，学会了猫咪的一些特征。' },
-      { icon: '💡', title: '按开关，灯亮了', hint: '电路接通就会亮', correct: false, feedback: '这是电路在工作，通常不需要 AI 来判断或学习。' },
-      { icon: '🍂', title: '树叶随风飘', hint: '风吹动了树叶', correct: false, feedback: '这是自然现象，不是计算机在完成任务。' }
+    id: 'ai-basics', number: '01', title: 'AI 侦探出动！', shortTitle: '看图认识 AI', icon: '🤖', tone: 'purple', time: '8 分钟', prize: 'AI 观察员',
+    introCards: [
+      { label: '先认识一下', title: 'AI 是电脑里的小帮手', text: '你给它一个任务，它会用资料和计算帮你找线索、做事情。', takeaway: 'AI 是人们设计的工具，不是会魔法的小人。', artAlt: '孩子把任务交给电脑助手，再一起完成目标', artCaption: '人来定目标 · AI 来帮忙' },
+      { label: 'AI 怎么学习', title: '它先看很多例子', text: '想让电脑认出小猫，我们先给它看许多猫咪和其他动物的照片。', takeaway: '照片、文字、声音等资料，都可以成为学习的例子。', artAlt: '很多猫咪和狗狗照片送进电脑，电脑开始学习', artCaption: '例子越丰富，学习的线索越多' },
+      { label: 'AI 怎么学习', title: '它会从例子里找规律', text: '电脑会比较照片，留意耳朵、胡须、脸形等线索，再把线索组合起来。', takeaway: 'AI 从很多例子中寻找共同点，这个过程叫训练。', artAlt: '电脑观察猫咪的耳朵胡须和脸形，寻找共同特征', artCaption: '观察很多张 · 找到共同线索' },
+      { label: 'AI 怎么工作', title: '遇到新照片，它会猜一猜', text: '学过之后，AI 看到一张没见过的照片，也能根据线索猜“这像一只猫”。', takeaway: 'AI 是根据学过的规律做判断，不是像人一样理解照片。', artAlt: '一张模糊的新照片让人工智能不确定，孩子一起查看', artCaption: '见过的例子 · 帮它判断新照片' },
+      { label: 'AI 也会出错', title: '小帮手也有猜错的时候', text: '照片太模糊，或者学习的例子不够多，AI 就可能答错。用之前再看一眼，能帮忙发现问题。', takeaway: 'AI 可能会出错；重要的答案要由人来检查。', artAlt: '孩子检查电脑生成的图片，用自己的铅笔修改和确认', artCaption: 'AI 可能出错 · 人来核对' },
+      { label: 'AI 的发展', title: '几十年前，人们就开始研究 AI', text: '1950 年，图灵提出“机器会思考吗？”1956 年，研究者开始使用“人工智能”这个名字。', takeaway: 'AI 不是突然出现的，它经过了很多年的研究和改进。', artAlt: '从1950年机器能否思考的问题，走到1956年人工智能名称出现', artCaption: '1950 提出问题  →  1956 AI 得名' },
+      { label: 'AI 的发展', title: '电脑越来越强，AI 学会更多', text: '1997 年，下棋电脑“深蓝”战胜了世界冠军。后来，AI 也逐渐学会辨认图片和声音。', takeaway: '更多资料和更强的电脑，让 AI 可以处理更复杂的任务。', artAlt: '下棋电脑深蓝战胜世界冠军，后来人工智能学会识别图片和声音', artCaption: '下棋  →  认图、听声音' },
+      { label: 'AI 能做什么', title: '今天，AI 已经能帮很多忙', text: '它可以整理照片、把说话变成文字、帮忙翻译，也能根据描述创作图片和故事。', takeaway: 'AI 能帮我们更快完成任务，也能陪我们一起想点子。', artAlt: '人工智能帮助整理照片翻译说话内容并创作图画', artCaption: '认一认 · 听一听 · 创作新点子' },
+      { label: 'AI 的未来', title: '未来，它还会帮我们做什么？', text: 'AI 可能成为学习、科学和无障碍生活的好帮手。人来提出目标、检查结果，再做重要决定。', takeaway: '让 AI 帮忙，但方向和决定始终由人掌握。', artAlt: '孩子和人工智能一起探索科学，孩子检查并决定下一步', artCaption: 'AI 提供帮助 · 人来选择方向' }
     ],
-    quizTitle: '最后一个小线索', quiz: 'AI 看过许多例子后，通常会怎样？',
-    answers: [
-      { text: '从例子里找规律，再用规律做判断', correct: true, feedback: '没错！AI 常常从很多例子中学习规律，但它也会判断错。' },
-      { text: '像人一样拥有自己的感受', correct: false, feedback: 'AI 可以做一些聪明的任务，但它没有人的生活经验和感受。' },
-      { text: '自动知道所有事情的答案', correct: false, feedback: 'AI 不了解所有事情，也可能出错；重要内容要自己判断。' }
-    ], prize: 'AI 观察员'
+    introTests: [
+      { title: 'AI 是什么？', prompt: '哪句话最能说明 AI？', icon: '💡', answers: [
+        { text: '人们设计的电脑工具，能从资料中找规律、帮忙完成任务。', correct: true, feedback: '答对啦！AI 是人造的工具，可以从资料里找规律，帮忙完成一些任务。' },
+        { text: '一个会魔法、什么都知道的小机器人。', correct: false, feedback: 'AI 不是魔法，也不知道所有事情；它是人们设计的计算机工具。' },
+        { text: '和人一样会感受、会自己决定一切的生命。', correct: false, feedback: 'AI 能完成一些聪明任务，但它没有人的感受和生活经验。' }
+      ] },
+      { title: 'AI 是怎样一步步发展的？', prompt: '下面哪条发展路线比较合理？', icon: '🕰️', answers: [
+        { text: '先研究让电脑解题、下棋，后来逐渐学会认图、听声音和生成内容。', correct: true, feedback: '没错！AI 从早期研究开始，随着资料和电脑进步，能做的事情越来越多。' },
+        { text: '电脑先学会画画，后来才有人开始研究 AI。', correct: false, feedback: 'AI 研究早在几十年前就开始了；生成图片是后来发展出的能力。' },
+        { text: 'AI 从一开始就能自动回答所有问题，从来没有变化。', correct: false, feedback: 'AI 经过了很多年的研究和改进，能力一直在变化。' }
+      ] },
+      { title: 'AI 可以为我们做什么？', prompt: '哪种做法最聪明？', icon: '🧭', answers: [
+        { text: '让 AI 帮忙翻译或整理想法，再由我检查重要内容。', correct: true, feedback: '很棒！AI 可以帮忙，人来检查信息、选择和做决定。' },
+        { text: 'AI 给出的答案一定正确，所以不用再看。', correct: false, feedback: 'AI 也会出错。重要内容要核对，不能只看它说了什么。' },
+        { text: '让 AI 替我决定所有事情，我不用再思考。', correct: false, feedback: 'AI 可以给建议，但目标和重要决定应该由人掌握。' }
+      ] }
+    ]
   },
   {
     id: 'aigc', number: '02', title: 'AIGC 魔法工坊', shortTitle: '认识会创作的 AI', icon: '🎨', tone: 'mint', time: '3 分钟',
@@ -71,6 +86,7 @@ let activeLessonId = lessons[0].id;
 let activeStep = 0;
 let selectedClue = null;
 let selectedAnswer = null;
+let introAnswers = [];
 let selectedTopic = topics[0].id;
 let selectedAudience = audiences[0].id;
 let selectedStyle = styles[0].id;
@@ -128,6 +144,7 @@ function beginLesson(id) {
   activeStep = 0;
   selectedClue = null;
   selectedAnswer = null;
+  introAnswers = [];
   showView('learn');
 }
 
@@ -138,14 +155,77 @@ function activeLesson() {
 function renderLesson() {
   const lesson = activeLesson();
   const dots = document.getElementById('lesson-steps');
-  dots.innerHTML = [0, 1, 2].map(step => `<span class="lesson-step-dot ${activeStep === step ? 'is-current' : (activeStep > step ? 'is-done' : '')}" aria-label="第 ${step + 1} 步"></span>`).join('');
+  if (lesson.introCards) {
+    const sceneCount = lesson.introCards.length;
+    const testCount = lesson.introTests.length;
+    const total = sceneCount + testCount;
+    const progressText = activeStep < sceneCount
+      ? `看图 ${activeStep + 1}/${sceneCount}`
+      : activeStep < total ? `小测 ${activeStep - sceneCount + 1}/${testCount}` : '已完成';
+    const progress = Math.min(100, activeStep / total * 100);
+    dots.classList.add('is-intro-progress');
+    dots.innerHTML = `<span class="intro-progress-label">${progressText}</span><span class="intro-progress-track" role="progressbar" aria-label="第一关进度" aria-valuemin="0" aria-valuemax="${total}" aria-valuenow="${activeStep}"><span style="width:${progress}%"></span></span>`;
+  } else {
+    dots.classList.remove('is-intro-progress');
+    dots.innerHTML = [0, 1, 2].map(step => `<span class="lesson-step-dot ${activeStep === step ? 'is-current' : (activeStep > step ? 'is-done' : '')}" aria-label="第 ${step + 1} 步"></span>`).join('');
+  }
   document.getElementById('lesson-time').textContent = '⏱ ' + lesson.time;
   const content = document.getElementById('lesson-content');
-  if (activeStep === 0) content.innerHTML = renderStory(lesson);
+  if (lesson.introCards && activeStep < lesson.introCards.length) content.innerHTML = renderIntroSlide(lesson, activeStep);
+  else if (lesson.introCards && activeStep < lesson.introCards.length + lesson.introTests.length) content.innerHTML = renderIntroTest(lesson, activeStep - lesson.introCards.length);
+  else if (lesson.introCards) content.innerHTML = renderReward(lesson);
+  else if (activeStep === 0) content.innerHTML = renderStory(lesson);
   else if (activeStep === 1) content.innerHTML = renderMission(lesson);
   else if (activeStep === 2) content.innerHTML = renderQuiz(lesson);
   else content.innerHTML = renderReward(lesson);
   wireLessonActions();
+}
+
+function renderIntroArt(card, index) {
+  const panels = [
+    ['308.1% 331.7%', '0% 0%', '407 / 378'], ['306.6% 331.7%', '49.9% 0%', '409 / 378'], ['307.4% 331.7%', '100% 0%', '408 / 378'],
+    ['308.1% 327.4%', '0% 45.1%', '407 / 383'], ['307.4% 269.7%', '100% 100%', '408 / 465'], ['306.6% 327.4%', '49.9% 45.1%', '409 / 383'],
+    ['307.4% 327.4%', '100% 45.1%', '408 / 383'], ['308.1% 269.7%', '0% 100%', '407 / 465'], ['306.6% 269.7%', '49.9% 100%', '409 / 465']
+  ][index];
+  return `<div class="intro-art" role="img" aria-label="${card.artAlt}" style="--sprite-size:${panels[0]};--sprite-position:${panels[1]};--panel-ratio:${panels[2]}">
+    <div class="intro-art-picture" aria-hidden="true"></div>
+    <div class="intro-art-caption"><span aria-hidden="true">✦</span>${card.artCaption}</div>
+  </div>`;
+}
+
+function renderIntroSlide(lesson, index) {
+  const card = lesson.introCards[index];
+  const lastScene = index === lesson.introCards.length - 1;
+  return `<article class="lesson-stage intro-slide">
+    <div class="intro-slide-head"><span class="stage-ribbon-label"><span>🗺️</span> 第一关 · 看图认识 AI</span><span class="intro-card-count">图 ${String(index + 1).padStart(2, '0')} / ${lesson.introCards.length}</span></div>
+    <div class="intro-slide-grid">
+      ${renderIntroArt(card, index)}
+      <div class="intro-slide-copy"><span class="section-kicker">${card.label}</span><h1 id="lesson-page-title">${card.title}</h1><p>${card.text}</p>
+        <div class="intro-takeaway"><span aria-hidden="true">💡</span><p>${card.takeaway}</p></div>
+        <div class="intro-slide-actions"><button class="button button-soft intro-back-button" type="button" data-action="previous-step" ${index === 0 ? 'disabled' : ''}>上一张</button><button class="button button-purple" type="button" data-action="next-step">${lastScene ? '开始 3 道小测' : '下一张图'} <span aria-hidden="true">→</span></button></div>
+      </div>
+    </div>
+  </article>`;
+}
+
+function renderIntroTest(lesson, index) {
+  const test = lesson.introTests[index];
+  const selectedIndex = introAnswers[index];
+  const selected = selectedIndex === undefined ? null : test.answers[selectedIndex];
+  const answers = test.answers.map((answer, answerIndex) => {
+    const isSelected = selectedIndex === answerIndex;
+    const stateClass = isSelected ? (answer.correct ? ' is-correct' : ' is-wrong') : '';
+    return `<button class="intro-answer${stateClass}" type="button" data-intro-answer="${answerIndex}" aria-pressed="${isSelected}"><span class="intro-answer-letter">${String.fromCharCode(65 + answerIndex)}</span><span class="intro-answer-text">${answer.text}</span><span class="intro-answer-mark" aria-hidden="true">${isSelected ? (answer.correct ? '✓' : '↻') : ''}</span></button>`;
+  }).join('');
+  const lastTest = index === lesson.introTests.length - 1;
+  return `<article class="lesson-stage intro-test-stage">
+    <div class="intro-slide-head"><span class="stage-ribbon-label"><span>🧩</span> 看图后的 3 个小测</span><span class="intro-card-count">第 ${index + 1} 题 / ${lesson.introTests.length}</span></div>
+    <div class="intro-test-content"><div class="intro-test-icon" aria-hidden="true">${test.icon}</div><span class="section-kicker">想一想，再选择</span><h1 id="lesson-page-title">${test.title}</h1><p class="intro-test-prompt">${test.prompt}</p>
+      <div class="intro-answers">${answers}</div>
+      <div class="intro-test-feedback ${selected ? (selected.correct ? 'is-correct' : 'is-wrong') : ''}" aria-live="polite">${selected ? selected.feedback : '选错也没关系，可以再试一次。'}</div>
+      <div class="intro-test-actions"><button class="button button-soft intro-back-button" type="button" data-action="previous-step">回看上一页</button><button class="button button-purple" type="button" data-action="next-intro-test" ${!selected || !selected.correct ? 'disabled' : ''}>${lastTest ? '完成第一关' : '下一题'} <span aria-hidden="true">${lastTest ? '⭐' : '→'}</span></button></div>
+    </div>
+  </article>`;
 }
 
 function renderStory(lesson) {
@@ -207,13 +287,25 @@ function renderReward(lesson) {
   </article>`;
 }
 
+function completeActiveLesson() {
+  if (!completedLessons.includes(activeLessonId)) completedLessons.push(activeLessonId);
+  saveProgress();
+  updateProgress();
+  renderRouteCards();
+}
+
 function wireLessonActions() {
   document.querySelectorAll('[data-action="next-step"]').forEach(button => button.addEventListener('click', () => {
-    if (activeStep === 1 && selectedClue === null) {
+    const lesson = activeLesson();
+    if (!lesson.introCards && activeStep === 1 && selectedClue === null) {
       showToast('先点选一条线索哦');
       return;
     }
-    activeStep = Math.min(activeStep + 1, 3);
+    activeStep = Math.min(activeStep + 1, lesson.introCards ? lesson.introCards.length : 3);
+    renderLesson();
+  }));
+  document.querySelectorAll('[data-action="previous-step"]').forEach(button => button.addEventListener('click', () => {
+    activeStep = Math.max(0, activeStep - 1);
     renderLesson();
   }));
   document.querySelectorAll('[data-clue]').forEach(button => button.addEventListener('click', () => {
@@ -224,16 +316,32 @@ function wireLessonActions() {
     selectedAnswer = Number(button.dataset.answer);
     renderLesson();
   }));
+  document.querySelectorAll('[data-intro-answer]').forEach(button => button.addEventListener('click', () => {
+    const lesson = activeLesson();
+    const questionIndex = activeStep - lesson.introCards.length;
+    introAnswers[questionIndex] = Number(button.dataset.introAnswer);
+    renderLesson();
+  }));
+  document.querySelectorAll('[data-action="next-intro-test"]').forEach(button => button.addEventListener('click', () => {
+    const lesson = activeLesson();
+    const questionIndex = activeStep - lesson.introCards.length;
+    const answer = lesson.introTests[questionIndex].answers[introAnswers[questionIndex]];
+    if (!answer || !answer.correct) return;
+    if (questionIndex === lesson.introTests.length - 1) {
+      completeActiveLesson();
+      activeStep = lesson.introCards.length + lesson.introTests.length;
+    } else {
+      activeStep += 1;
+    }
+    renderLesson();
+  }));
   document.querySelectorAll('[data-action="finish-lesson"]').forEach(button => button.addEventListener('click', () => {
     if (selectedAnswer === null) {
       showToast('先选一个答案，再来领星星');
       return;
     }
-    if (!completedLessons.includes(activeLessonId)) completedLessons.push(activeLessonId);
-    saveProgress();
-    updateProgress();
-    renderRouteCards();
-    activeStep = 3;
+    completeActiveLesson();
+    activeStep = activeLesson().introCards ? activeLesson().introCards.length + activeLesson().introTests.length : 3;
     renderLesson();
   }));
   document.querySelectorAll('[data-action="next-lesson"]').forEach(button => button.addEventListener('click', () => {
