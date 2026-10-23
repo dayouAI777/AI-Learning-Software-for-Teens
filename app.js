@@ -1,322 +1,315 @@
 const lessons = [
   {
-    id: 'ai-basics', number: '01', duration: '约 4 分钟', icon: '✦', title: 'AI 是什么？', short: '认识人工智能，以及它能做和不能做的事。', category: '第一站 · 认识 AI',
-    lead: 'AI 是“人工智能”的简称。它是一类让计算机完成识别、预测、理解语言或解决问题等任务的技术。',
-    example: '想想看：相册能按“猫咪”找到照片，语音助手能听懂你的问题。这些都可能用到了 AI。',
-    paragraphs: [
-      ['它怎样学会做事？', '很多 AI 系统会从大量例子中寻找规律。比如看过许多猫和狗的照片后，模型可以学着分辨它们。它不是背下每一张照片，而是在数据里调整出一套判断方法。'],
-      ['AI 像人吗？', 'AI 可以完成一些看起来很聪明的任务，但它没有人的生活经验、感受和真正的理解。它给出的答案也可能出错，所以要带着好奇心使用，也要自己判断。']
+    id: 'ai-basics', number: '01', title: 'AI 侦探出动！', shortTitle: '发现生活里的 AI', icon: '🔎', tone: 'purple', time: '3 分钟',
+    storyTitle: '相册怎么认出小猫的？', story: '米粒的相册把所有小猫照片自动放到了一起。它没有一只只问“这是猫吗”，那它是怎么认出来的？', concept: 'AI 是人们设计的计算机工具。它能从很多例子里找规律，帮我们完成一些任务；有时也会认错。',
+    missionTitle: '帮小侦探找出 AI', missionPrompt: '点一下你觉得用了 AI 的事情。',
+    choices: [
+      { icon: '📸', title: '相册认出猫咪', hint: '从照片里找特征', correct: true, feedback: '找到了！AI 看过许多照片，学会了猫咪的一些特征。' },
+      { icon: '💡', title: '按开关，灯亮了', hint: '电路接通就会亮', correct: false, feedback: '这是电路在工作，通常不需要 AI 来判断或学习。' },
+      { icon: '🍂', title: '树叶随风飘', hint: '风吹动了树叶', correct: false, feedback: '这是自然现象，不是计算机在完成任务。' }
     ],
-    takeaway: 'AI 是人们设计和训练出来的工具。它很有用，也有边界；人仍然负责思考和做决定。',
-    question: 'AI 从许多猫咪照片中学习后，最可能学到了什么？', answers: ['一套用来辨认猫咪特征的规律', '每只猫咪的名字和心情', '人类为什么喜欢猫咪'], correct: 0, explain: '模型会从例子里寻找可用于判断的规律，但不会因此知道猫咪的名字或感受。'
+    quizTitle: '最后一个小线索', quiz: 'AI 看过许多例子后，通常会怎样？',
+    answers: [
+      { text: '从例子里找规律，再用规律做判断', correct: true, feedback: '没错！AI 常常从很多例子中学习规律，但它也会判断错。' },
+      { text: '像人一样拥有自己的感受', correct: false, feedback: 'AI 可以做一些聪明的任务，但它没有人的生活经验和感受。' },
+      { text: '自动知道所有事情的答案', correct: false, feedback: 'AI 不了解所有事情，也可能出错；重要内容要自己判断。' }
+    ], prize: 'AI 观察员'
   },
   {
-    id: 'aigc', number: '02', duration: '约 5 分钟', icon: '✧', title: 'AIGC 是什么？', short: '看看 AI 怎样根据要求生成文字、图片和更多作品。', category: '第二站 · 认识 AIGC',
-    lead: 'AIGC 是“人工智能生成内容”的简称，指 AI 根据人给出的要求，生成文字、图像、声音、视频或代码等内容。',
-    example: '你写下“画一只坐在月亮上的柴犬”，图像生成工具就可能据此制作一张新图片。',
-    paragraphs: [
-      ['生成，不等于复制粘贴', '生成式 AI 通常会根据训练中学到的模式，一步步预测接下来合适的文字或画面元素。它能组合出新内容，但不代表内容一定正确、原创或符合你的想法。'],
-      ['创作时要记住什么？', '把 AI 当作帮你 brainstorm 的伙伴：它可以提供草稿和不同角度。你要检查事实，尊重他人的作品和规则，并对最后交出的内容负责。']
+    id: 'aigc', number: '02', title: 'AIGC 魔法工坊', shortTitle: '认识会创作的 AI', icon: '🎨', tone: 'mint', time: '3 分钟',
+    storyTitle: '一句话，变出一张图？', story: '阿哲输入“戴着宇航员头盔的柴犬，在月球上踢足球”。几秒后，屏幕上出现了一张新画面。', concept: 'AIGC（人工智能生成内容）就是 AI 按要求创作文字、图片等。作品还要由人检查和修改。',
+    missionTitle: '哪件事是“生成内容”？', missionPrompt: '选一个 AI 正在创作新内容的例子。',
+    choices: [
+      { icon: '🖼️', title: '按描述画一只太空柴犬', hint: '生成一张新的图片', correct: true, feedback: '答对了！AI 根据你的描述生成了一张新图片，这就是 AIGC。' },
+      { icon: '🔍', title: '在相册里找狗狗照片', hint: '从已有照片中查找', correct: false, feedback: '这是在已有照片里查找，不是在生成新内容。' },
+      { icon: '🧮', title: '计算 23 加 19', hint: '算出一个数字', correct: false, feedback: '这是计算任务，不是生成文字、图片等新内容。' }
     ],
-    takeaway: 'AIGC 可以帮忙生成内容；内容仍需要人检查、修改和负责。',
-    question: 'AI 生成了一段关于恐龙的介绍，交给同学前应该怎么做？', answers: ['直接复制，因为 AI 总是正确', '查证重要事实，再用自己的话修改', '把作者名字删掉就可以'], correct: 1, explain: '生成内容可能有错误；查证事实、尊重来源并加入自己的思考很重要。'
+    quizTitle: '创作也要会判断', quiz: 'AI 写了一段恐龙介绍，交给同学前先做什么？',
+    answers: [
+      { text: '直接复制，AI 一定知道得最准确', correct: false, feedback: 'AI 可能会编错事实，不能把它的回答当成标准答案。' },
+      { text: '查证重要事实，再加入自己的修改', correct: true, feedback: '对！AI 可以帮忙起草，检查和修改仍然由你负责。' },
+      { text: '删掉内容来源，就能当成自己的作品', correct: false, feedback: '使用别人的内容要尊重来源和规则，也要加入自己的想法。' }
+    ], prize: '灵感魔法师'
   },
   {
-    id: 'create', number: '03', duration: '约 6 分钟', icon: '✳', title: '怎样和 AI 一起创造？', short: '学会说清楚目标，让 AI 成为你的创意搭档。', category: '第三站 · 开始创造',
-    lead: '和 AI 合作的第一步，是把脑海中的模糊想法变成清楚的要求。好的提示词，会告诉 AI 任务、背景和你想要的结果。',
-    example: '与其说“写点东西”，不如说“请为六年级同学写一段 100 字的海洋保护倡议，语气轻松，并给出一个今天能做到的小行动”。',
-    paragraphs: [
-      ['提示词的四个小积木', '说清楚角色（请你做我的创意伙伴）、任务（写什么或做什么）、背景（给谁看、为什么做），再补上要求（长度、风格或格式）。不必一次写得完美，可以继续追问和修改。'],
-      ['把创作过程握在自己手里', '先有自己的点子，再请 AI 帮忙拓展；比较不同版本，挑选有用的部分，最后由你检查和完成。不要输入隐私信息，也不要把 AI 的回答当成唯一答案。']
+    id: 'create', number: '03', title: '提示词设计师', shortTitle: '让点子更清楚', icon: '🚀', tone: 'coral', time: '4 分钟',
+    storyTitle: '“做个海报”还不够具体', story: '小组要办旧书交换日。小满只告诉 AI“做个海报”，结果谁来看、海报写什么，都还不清楚。', concept: '好提示词会说清楚：要做什么、给谁看、想要什么感觉。你可以边看结果边补充，不必一次写完美。',
+    missionTitle: '给提示词补一块积木', missionPrompt: '小满想让低年级同学也看懂。她该补充哪句话？',
+    choices: [
+      { icon: '👧', title: '给三年级同学看', hint: '补上读者是谁', correct: true, feedback: '很好！告诉 AI 读者是谁，它就更容易调整词语和难度。' },
+      { icon: '✨', title: '让我惊讶一下', hint: '还不知道想要什么', correct: false, feedback: '可以加创意，但先说明给谁看，内容才更容易合适。' },
+      { icon: '📄', title: '随便写一点就好', hint: '没有说清目标', correct: false, feedback: '目标越清楚，AI 越能靠近你的想法；之后还能继续修改。' }
     ],
-    takeaway: '你的点子 + 清楚的要求 + 认真修改 = 更有主见的 AI 合作创作。',
-    question: '哪一个提示词更容易得到符合需要的回答？', answers: ['“给我写一个。”', '“写一段介绍校园植物的短文，给三年级同学看，用简单句子。”', '“你知道我想要什么吧？”'], correct: 1, explain: '说明任务、读者和表达要求，能帮助 AI 更贴近你的目标。'
+    quizTitle: '选一个更清楚的提示', quiz: '哪句话更容易得到合适的海报？',
+    answers: [
+      { text: '帮我做个东西。', correct: false, feedback: '这句话没有说要做什么，也没说给谁看。' },
+      { text: '为三年级同学设计旧书交换海报，颜色温暖，标题要醒目。', correct: true, feedback: '很清楚！任务、读者和风格都说到了，接下来还能继续修改。' },
+      { text: '你应该知道我喜欢什么。', correct: false, feedback: 'AI 不会自动知道你的想法；把要求说出来会更有帮助。' }
+    ], prize: '点子创造家'
   }
 ];
 
-const inspirationIdeas = [
-  ['如果 AI 能帮你解决一个小烦恼，你会选什么？', '给书桌设计一个“自动整理提醒器”？想象一下，再把点子写下来。'],
-  ['你能用 AI 帮校园里的小动物做点什么？', '试着设计一张温柔的流浪猫关怀指南，提醒大家安全、友善地提供帮助。'],
-  ['给未来的自己做一份“灵感工具箱”吧。', '收集三个你喜欢的点子，再让 AI 帮你想出它们之间意想不到的联系。'],
-  ['如果科学知识可以变成一场小游戏呢？', '挑一个你最近学到的知识，想想怎样用谜题、角色或闯关来介绍它。']
+const topics = [
+  { id: 'book', icon: '📚', label: '旧书交换海报', title: '旧书出发，\n新故事到家！', caption: '给同学的一张温暖海报', request: '为班级旧书交换日设计一张海报' },
+  { id: 'ocean', icon: '🐢', label: '海龟冒险故事', title: '小海龟的\n深海大冒险', caption: '一个关于海洋的故事', request: '写一个关于小海龟的海洋冒险故事' },
+  { id: 'invention', icon: '💡', label: '校园小发明', title: '让教室\n更方便一点！', caption: '从一个小问题开始', request: '想一个能让教室生活更方便的小发明' }
+];
+const audiences = [
+  { id: 'classmates', icon: '👫', label: '同学', phrase: '班上的同学' },
+  { id: 'family', icon: '🏠', label: '家人', phrase: '我的家人' },
+  { id: 'younger', icon: '🧒', label: '低年级', phrase: '低年级的小朋友' }
+];
+const styles = [
+  { id: 'cute', icon: '🌈', label: '可爱有趣', phrase: '可爱、有趣的感觉' },
+  { id: 'comic', icon: '💥', label: '漫画风', phrase: '像漫画一样活泼' },
+  { id: 'warm', icon: '☀️', label: '温暖清新', phrase: '温暖、清新的感觉' }
 ];
 
-const storageKey = 'ai-creator-progress-v1';
-let activeLessonId = lessons[0].id;
+const storageKey = 'ai-explorer-progress-v2';
 let completedLessons = readProgress();
+let activeLessonId = lessons[0].id;
+let activeStep = 0;
+let selectedClue = null;
+let selectedAnswer = null;
+let selectedTopic = topics[0].id;
+let selectedAudience = audiences[0].id;
+let selectedStyle = styles[0].id;
+let toastTimer;
 
 function readProgress() {
   try {
-    const value = JSON.parse(localStorage.getItem(storageKey) || '[]');
-    return Array.isArray(value) ? value.filter(id => lessons.some(lesson => lesson.id === id)) : [];
-  } catch (error) {
-    return [];
-  }
+    const saved = JSON.parse(localStorage.getItem(storageKey) || localStorage.getItem('ai-creator-progress-v1') || '[]');
+    return Array.isArray(saved) ? saved.filter(id => lessons.some(lesson => lesson.id === id)) : [];
+  } catch (_) { return []; }
 }
 
 function saveProgress() {
-  try { localStorage.setItem(storageKey, JSON.stringify(completedLessons)); } catch (error) { /* 学习仍可继续 */ }
+  try { localStorage.setItem(storageKey, JSON.stringify(completedLessons)); } catch (_) { /* 浏览器不支持本地保存时，当前页面仍可继续 */ }
+}
+
+function updateProgress() {
+  const count = completedLessons.length;
+  const percentage = Math.round(count / lessons.length * 100) + '%';
+  document.getElementById('header-stars').textContent = String(count);
+  document.getElementById('home-progress-label').textContent = count + ' / ' + lessons.length;
+  document.getElementById('home-progress-fill').style.width = percentage;
+}
+
+function renderRouteCards() {
+  const container = document.getElementById('route-cards');
+  container.innerHTML = lessons.map((lesson, index) => {
+    const done = completedLessons.includes(lesson.id);
+    const next = !done && lessons.findIndex(item => !completedLessons.includes(item.id)) === index;
+    const action = done ? '再玩一次' : (next ? '现在出发' : '去看看');
+    return `<button class="route-card ${done ? 'is-complete' : ''}" type="button" data-open-lesson="${lesson.id}" data-tone="${lesson.tone}" aria-label="${action}：${lesson.title}">
+      <span class="route-card-top"><span class="route-number">${done ? '✓' : lesson.number}</span><span class="route-time">⏱ ${lesson.time}</span></span>
+      <span class="route-icon" aria-hidden="true">${lesson.icon}</span>
+      <h3>${lesson.title}</h3><p>${lesson.shortTitle}</p>
+      <span class="route-card-bottom"><span>${action}</span><span aria-hidden="true">→</span><span class="card-status">${done ? '✓' : '·'}</span></span>
+    </button>`;
+  }).join('');
+  container.querySelectorAll('[data-open-lesson]').forEach(button => button.addEventListener('click', () => beginLesson(button.dataset.openLesson)));
 }
 
 function showView(name) {
-  const labels = { home: '学习首页', learn: '认识 AI', studio: '创作练习场' };
   document.querySelectorAll('.view').forEach(view => {
-    const isCurrent = view.id === name + '-view';
-    view.hidden = !isCurrent;
-    view.classList.toggle('is-visible', isCurrent);
+    const visible = view.id === name + '-view';
+    view.hidden = !visible;
+    view.classList.toggle('is-visible', visible);
   });
-  document.querySelectorAll('.nav-item').forEach(button => button.classList.toggle('is-active', button.dataset.view === name));
-  document.getElementById('page-crumb').textContent = labels[name] || labels.home;
-  if (name === 'learn') renderLesson(activeLessonId);
+  document.querySelectorAll('[data-view]').forEach(button => button.classList.toggle('is-active', button.dataset.view === name));
+  if (name === 'learn') renderLesson();
+  if (name === 'studio') renderStudio();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-function renderProgress() {
-  const count = completedLessons.length;
-  document.getElementById('progress-count').innerHTML = count + ' <small>/ 3</small>';
-  document.getElementById('progress-fill').style.width = (count / lessons.length * 100) + '%';
-  const captions = ['刚刚启程，选一节课开始吧！', '不错，继续保持好奇！', '已经完成两站，离创作更近啦！', '太棒了，你完成了 AI 入门路线！'];
-  document.getElementById('progress-caption').textContent = captions[count];
+function beginLesson(id) {
+  activeLessonId = id;
+  activeStep = 0;
+  selectedClue = null;
+  selectedAnswer = null;
+  showView('learn');
 }
 
-function renderHomeLessons() {
-  const container = document.getElementById('home-lessons');
-  container.replaceChildren();
-  lessons.forEach(lesson => {
-    const button = document.createElement('button');
-    button.type = 'button';
-    button.className = 'lesson-card';
-    button.setAttribute('aria-label', '打开课程：' + lesson.title);
-    button.addEventListener('click', () => { activeLessonId = lesson.id; showView('learn'); });
-
-    const top = document.createElement('div');
-    top.className = 'lesson-card-top';
-    const number = document.createElement('span');
-    number.className = 'lesson-number';
-    number.textContent = lesson.number;
-    const duration = document.createElement('span');
-    duration.className = 'lesson-duration';
-    duration.textContent = lesson.duration;
-    top.append(number, duration);
-    const title = document.createElement('h3');
-    title.textContent = lesson.title;
-    const summary = document.createElement('p');
-    summary.textContent = lesson.short;
-    const arrow = document.createElement('span');
-    arrow.className = 'lesson-card-arrow';
-    arrow.setAttribute('aria-hidden', 'true');
-    arrow.textContent = '↗';
-    button.append(top, title, summary, arrow);
-    if (completedLessons.includes(lesson.id)) {
-      const mark = document.createElement('span');
-      mark.className = 'completed-mark';
-      mark.setAttribute('aria-label', '已完成');
-      mark.textContent = '✓';
-      button.append(mark);
-    }
-    container.append(button);
-  });
+function activeLesson() {
+  return lessons.find(lesson => lesson.id === activeLessonId) || lessons[0];
 }
 
-function renderLessonList() {
-  const container = document.getElementById('lesson-list');
-  container.replaceChildren();
-  lessons.forEach(lesson => {
-    const button = document.createElement('button');
-    button.type = 'button';
-    button.className = 'rail-lesson' + (lesson.id === activeLessonId ? ' is-selected' : '');
-    button.addEventListener('click', () => { activeLessonId = lesson.id; renderLesson(lesson.id); });
-    const number = document.createElement('span');
-    number.className = 'lesson-number';
-    number.textContent = lesson.number;
-    const text = document.createElement('span');
-    text.className = 'rail-lesson-text';
-    const title = document.createElement('strong');
-    title.textContent = lesson.title;
-    const duration = document.createElement('small');
-    duration.textContent = lesson.duration;
-    text.append(title, duration);
-    button.append(number, text);
-    if (completedLessons.includes(lesson.id)) {
-      const check = document.createElement('span');
-      check.className = 'rail-check';
-      check.setAttribute('aria-label', '已完成');
-      check.textContent = '✓';
-      button.append(check);
-    }
-    container.append(button);
-  });
+function renderLesson() {
+  const lesson = activeLesson();
+  const dots = document.getElementById('lesson-steps');
+  dots.innerHTML = [0, 1, 2].map(step => `<span class="lesson-step-dot ${activeStep === step ? 'is-current' : (activeStep > step ? 'is-done' : '')}" aria-label="第 ${step + 1} 步"></span>`).join('');
+  document.getElementById('lesson-time').textContent = '⏱ ' + lesson.time;
+  const content = document.getElementById('lesson-content');
+  if (activeStep === 0) content.innerHTML = renderStory(lesson);
+  else if (activeStep === 1) content.innerHTML = renderMission(lesson);
+  else if (activeStep === 2) content.innerHTML = renderQuiz(lesson);
+  else content.innerHTML = renderReward(lesson);
+  wireLessonActions();
 }
 
-function renderLesson(id) {
-  const lesson = lessons.find(item => item.id === id) || lessons[0];
-  activeLessonId = lesson.id;
-  renderLessonList();
-  const article = document.getElementById('lesson-content');
-  article.replaceChildren();
-
-  const top = document.createElement('div');
-  top.className = 'lesson-panel-top';
-  const category = document.createElement('span');
-  category.className = 'lesson-category';
-  category.textContent = lesson.category;
-  const duration = document.createElement('span');
-  duration.className = 'lesson-duration';
-  duration.textContent = lesson.duration;
-  top.append(category, duration);
-
-  const title = document.createElement('h2');
-  title.textContent = lesson.title;
-  const lead = document.createElement('p');
-  lead.className = 'lesson-lead';
-  lead.textContent = lesson.lead;
-  const visual = document.createElement('div');
-  visual.className = 'lesson-visual';
-  const visualIcon = document.createElement('span');
-  visualIcon.className = 'lesson-visual-icon';
-  visualIcon.setAttribute('aria-hidden', 'true');
-  visualIcon.textContent = lesson.icon;
-  const visualText = document.createElement('p');
-  const exampleStrong = document.createElement('strong');
-  exampleStrong.textContent = '生活里的例子：';
-  visualText.append(exampleStrong, document.createTextNode(lesson.example));
-  visual.append(visualIcon, visualText);
-
-  const copy = document.createElement('div');
-  copy.className = 'lesson-copy';
-  lesson.paragraphs.forEach(([heading, body]) => {
-    const h3 = document.createElement('h3');
-    h3.textContent = heading;
-    const p = document.createElement('p');
-    p.textContent = body;
-    copy.append(h3, p);
-  });
-  const takeaway = document.createElement('div');
-  takeaway.className = 'key-takeaway';
-  const takeawayStrong = document.createElement('strong');
-  takeawayStrong.textContent = '记住这一点：';
-  takeaway.append(takeawayStrong, document.createTextNode(' ' + lesson.takeaway));
-
-  const quiz = buildQuiz(lesson);
-  const actions = document.createElement('div');
-  actions.className = 'lesson-actions';
-  const step = document.createElement('span');
-  step.className = 'lesson-step';
-  step.textContent = '课程 ' + lesson.number + ' / 03';
-  const complete = document.createElement('button');
-  complete.type = 'button';
-  complete.className = 'button ' + (completedLessons.includes(lesson.id) ? 'button-soft' : 'button-primary');
-  complete.textContent = completedLessons.includes(lesson.id) ? '已加入学习进度 ✓' : '完成这节课 ✓';
-  complete.addEventListener('click', () => {
-    if (!completedLessons.includes(lesson.id)) completedLessons.push(lesson.id);
-    saveProgress();
-    renderProgress();
-    renderHomeLessons();
-    renderLesson(lesson.id);
-  });
-  actions.append(step, complete);
-  article.append(top, title, lead, visual, copy, takeaway, quiz, actions);
+function renderStory(lesson) {
+  return `<article class="lesson-stage story-stage">
+    <div class="story-art" aria-hidden="true"><span class="story-sparkle story-sparkle-one">✦</span><span class="story-sparkle story-sparkle-two">✧</span><span class="story-emoji">${lesson.icon}</span></div>
+    <div class="story-copy"><span class="section-kicker">第 ${lesson.number} 关 · ${lesson.time}</span><h1 id="lesson-page-title">${lesson.storyTitle}</h1><p>${lesson.story}</p>
+      <div class="concept-pill"><span aria-hidden="true">💡</span><span>${lesson.concept}</span></div>
+      <button class="button button-purple" type="button" data-action="next-step">我来找线索 <span aria-hidden="true">→</span></button>
+    </div>
+  </article>`;
 }
 
-function buildQuiz(lesson) {
-  const box = document.createElement('section');
-  box.className = 'quiz-box';
-  const heading = document.createElement('h3');
-  heading.textContent = '想一想 · 选一个你认为合适的答案';
-  box.append(heading);
-  const feedback = document.createElement('p');
-  feedback.className = 'quiz-feedback';
-  feedback.setAttribute('aria-live', 'polite');
-  const name = 'quiz-' + lesson.id;
-  const options = [];
-  lesson.answers.forEach((answer, index) => {
-    const label = document.createElement('label');
-    label.className = 'quiz-option';
-    const input = document.createElement('input');
-    input.type = 'radio';
-    input.name = name;
-    input.value = String(index);
-    const text = document.createElement('span');
-    text.textContent = answer;
-    label.append(input, text);
-    box.append(label);
-    options.push(input);
-  });
-  const submit = document.createElement('button');
-  submit.type = 'button';
-  submit.className = 'button button-soft quiz-submit';
-  submit.textContent = '看看答案';
-  submit.addEventListener('click', () => {
-    const selected = options.find(input => input.checked);
-    feedback.className = 'quiz-feedback';
-    if (!selected) {
-      feedback.textContent = '先选一个答案，再来看看吧。';
+function renderMission(lesson) {
+  const selected = selectedClue === null ? null : lesson.choices[selectedClue];
+  const feedbackClass = selected ? (selected.correct ? 'is-correct' : 'is-wrong') : '';
+  const feedback = selected ? selected.feedback : '';
+  const options = lesson.choices.map((choice, index) => {
+    const classes = ['mission-choice'];
+    if (selectedClue === index) classes.push('is-selected', choice.correct ? 'is-correct' : 'is-wrong');
+    return `<button class="${classes.join(' ')}" type="button" data-clue="${index}" aria-pressed="${selectedClue === index}">
+      <span class="choice-emoji" aria-hidden="true">${choice.icon}</span><span><strong>${choice.title}</strong><small>${choice.hint}</small></span><span class="choice-mark" aria-hidden="true">✓</span>
+    </button>`;
+  }).join('');
+  return `<article class="lesson-stage mission-stage">
+    <div class="stage-ribbon"><span class="stage-ribbon-label"><span>🎯</span> 互动任务</span><small>点选你的答案</small></div>
+    <div class="mission-heading"><span class="section-kicker">${lesson.title}</span><h1 id="lesson-page-title">${lesson.missionTitle}</h1><p>${lesson.missionPrompt}</p></div>
+    <div class="mission-choices">${options}</div>
+    <div class="mission-feedback ${selected ? 'is-visible ' + feedbackClass : ''}" aria-live="polite"><span class="feedback-icon" aria-hidden="true">${selected ? (selected.correct ? '🎉' : '💭') : ''}</span><span>${feedback}</span></div>
+    <div class="mission-actions"><button class="button button-purple" type="button" data-action="next-step">${selected ? '继续闯关' : '先选一条线索'} <span aria-hidden="true">→</span></button></div>
+  </article>`;
+}
+
+function renderQuiz(lesson) {
+  const selected = selectedAnswer === null ? null : lesson.answers[selectedAnswer];
+  const answers = lesson.answers.map((answer, index) => {
+    let classes = 'quiz-answer';
+    if (selectedAnswer === index) classes += ' is-selected ' + (answer.correct ? 'is-correct' : 'is-wrong');
+    return `<button class="${classes}" type="button" data-answer="${index}" aria-pressed="${selectedAnswer === index}"><span class="answer-letter">${String.fromCharCode(65 + index)}</span><span>${answer.text}</span></button>`;
+  }).join('');
+  return `<article class="lesson-stage quiz-stage">
+    <div class="stage-ribbon"><span class="stage-ribbon-label"><span>⭐</span> 通关小测</span><small>选一个最合适的答案</small></div>
+    <div class="quiz-illustration" aria-hidden="true">${lesson.icon}</div>
+    <span class="section-kicker">最后一个小挑战</span><h1 id="lesson-page-title">${lesson.quizTitle}</h1><p>${lesson.quiz}</p>
+    <div class="quiz-options">${answers}</div>
+    <div class="quiz-feedback ${selected ? 'is-visible ' + (selected.correct ? 'is-correct' : 'is-wrong') : ''}" aria-live="polite">${selected ? selected.feedback : ''}</div>
+    <div class="quiz-actions"><button class="button button-purple" type="button" data-action="finish-lesson">${selected ? '领取我的星星' : '先选一个答案'} <span aria-hidden="true">⭐</span></button></div>
+  </article>`;
+}
+
+function renderReward(lesson) {
+  const nextLesson = lessons.find(item => !completedLessons.includes(item.id));
+  const allDone = !nextLesson;
+  return `<article class="lesson-stage reward-stage">
+    <div class="reward-medal" aria-hidden="true">${allDone ? '🏆' : '⭐'}</div>
+    <span class="section-kicker">${allDone ? '探险地图全亮啦' : '新徽章收入囊中'}</span>
+    <h1 id="lesson-page-title">${allDone ? 'AI 新手探险家！' : '这一关，通关！'}</h1>
+    <p>${allDone ? '你已经认识 AI、AIGC，还学会了把点子说清楚。接下来，去创作工坊试试自己的想法吧！' : '你刚刚解锁「' + lesson.prize + '」徽章。准备好继续下一站了吗？'}</p>
+    <div class="reward-buttons">${allDone ? '<button class="button button-purple" type="button" data-action="open-studio">去创作工坊 <span aria-hidden="true">🎨</span></button>' : '<button class="button button-purple" type="button" data-action="next-lesson">继续下一关 <span aria-hidden="true">→</span></button>'}<button class="button button-soft" type="button" data-action="go-home">回探险地图</button></div>
+  </article>`;
+}
+
+function wireLessonActions() {
+  document.querySelectorAll('[data-action="next-step"]').forEach(button => button.addEventListener('click', () => {
+    if (activeStep === 1 && selectedClue === null) {
+      showToast('先点选一条线索哦');
       return;
     }
-    const isCorrect = Number(selected.value) === lesson.correct;
-    feedback.classList.add(isCorrect ? 'is-correct' : 'is-wrong');
-    feedback.textContent = (isCorrect ? '答对啦！' : '再想一想。') + ' ' + lesson.explain;
-  });
-  box.append(submit, feedback);
-  return box;
+    activeStep = Math.min(activeStep + 1, 3);
+    renderLesson();
+  }));
+  document.querySelectorAll('[data-clue]').forEach(button => button.addEventListener('click', () => {
+    selectedClue = Number(button.dataset.clue);
+    renderLesson();
+  }));
+  document.querySelectorAll('[data-answer]').forEach(button => button.addEventListener('click', () => {
+    selectedAnswer = Number(button.dataset.answer);
+    renderLesson();
+  }));
+  document.querySelectorAll('[data-action="finish-lesson"]').forEach(button => button.addEventListener('click', () => {
+    if (selectedAnswer === null) {
+      showToast('先选一个答案，再来领星星');
+      return;
+    }
+    if (!completedLessons.includes(activeLessonId)) completedLessons.push(activeLessonId);
+    saveProgress();
+    updateProgress();
+    renderRouteCards();
+    activeStep = 3;
+    renderLesson();
+  }));
+  document.querySelectorAll('[data-action="next-lesson"]').forEach(button => button.addEventListener('click', () => {
+    const next = lessons.find(lesson => !completedLessons.includes(lesson.id));
+    if (next) beginLesson(next.id);
+    else showView('home');
+  }));
+  document.querySelectorAll('[data-action="open-studio"]').forEach(button => button.addEventListener('click', () => showView('studio')));
+  document.querySelectorAll('[data-action="go-home"]').forEach(button => button.addEventListener('click', () => showView('home')));
 }
 
-function setRandomIdea() {
-  const previous = document.getElementById('idea-title').textContent;
-  const choices = inspirationIdeas.filter(idea => idea[0] !== previous);
-  const idea = choices[Math.floor(Math.random() * choices.length)];
-  document.getElementById('idea-title').textContent = idea[0];
-  document.getElementById('idea-detail').textContent = idea[1];
+function choiceButton(icon, label, group, id, selected) {
+  return `<button class="option-tile ${selected === id ? 'is-selected' : ''}" type="button" data-choice-group="${group}" data-choice-id="${id}" aria-pressed="${selected === id}"><span aria-hidden="true">${icon}</span><span>${label}</span></button>`;
 }
 
-function escapeText(value) {
-  return value.replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character]));
+function renderStudio() {
+  document.getElementById('topic-options').innerHTML = topics.map(item => choiceButton(item.icon, item.label, 'topic', item.id, selectedTopic)).join('');
+  document.getElementById('audience-options').innerHTML = audiences.map(item => choiceButton(item.icon, item.label, 'audience', item.id, selectedAudience)).join('');
+  document.getElementById('style-options').innerHTML = styles.map(item => choiceButton(item.icon, item.label, 'style', item.id, selectedStyle)).join('');
+  document.querySelectorAll('[data-choice-group]').forEach(button => button.addEventListener('click', () => {
+    const group = button.dataset.choiceGroup;
+    if (group === 'topic') selectedTopic = button.dataset.choiceId;
+    if (group === 'audience') selectedAudience = button.dataset.choiceId;
+    if (group === 'style') selectedStyle = button.dataset.choiceId;
+    renderStudio();
+  }));
+  updatePreview();
+  const copyButton = document.getElementById('copy-prompt');
+  copyButton.onclick = copyPrompt;
 }
 
-function buildPrompt() {
-  const input = document.getElementById('idea-input');
-  const idea = input.value.trim();
-  const result = document.getElementById('prompt-result');
-  result.replaceChildren();
-  if (!idea) {
-    const placeholder = document.createElement('div');
-    placeholder.className = 'result-placeholder';
-    const icon = document.createElement('span');
-    icon.textContent = '✎';
-    const message = document.createElement('p');
-    message.textContent = '先写下一点你的想法，\n我们再把它变清楚。';
-    placeholder.append(icon, message);
-    result.append(placeholder);
-    input.focus();
-    return;
+function currentPrompt() {
+  const topic = topics.find(item => item.id === selectedTopic);
+  const audience = audiences.find(item => item.id === selectedAudience);
+  const style = styles.find(item => item.id === selectedStyle);
+  return `请做我的创意搭档。这份作品是给${audience.phrase}的。${topic.request}，整体采用${style.phrase}。请先给我 3 个不同点子，语言清楚、适合青少年；如果涉及事实，请提醒我查证。`;
+}
+
+function updatePreview() {
+  const topic = topics.find(item => item.id === selectedTopic);
+  const audience = audiences.find(item => item.id === selectedAudience);
+  document.getElementById('poster-emoji').textContent = topic.icon;
+  document.getElementById('poster-title').textContent = topic.title;
+  document.getElementById('poster-caption').textContent = '给' + audience.label + '的一份创意';
+  document.getElementById('prompt-output-text').textContent = currentPrompt();
+}
+
+async function copyPrompt() {
+  const prompt = currentPrompt();
+  try {
+    await navigator.clipboard.writeText(prompt);
+    showToast('提示词已复制，拿去试试吧！');
+  } catch (_) {
+    showToast('可以选中提示词文字后复制');
   }
-  const prompt = '请你做我的创意伙伴。\n\n我想创作：' + idea + '\n\n请先给我一个适合青少年的初稿或创作思路，表达清楚、容易理解。遇到不确定的事实请提醒我查证；不要编造来源。最后给我 2 个可以继续修改的方向。';
-  const label = document.createElement('span');
-  label.className = 'result-label';
-  label.textContent = '你的提示词草稿';
-  const text = document.createElement('p');
-  text.className = 'result-text';
-  text.textContent = prompt;
-  const tip = document.createElement('p');
-  tip.className = 'result-tip';
-  tip.textContent = '这是根据你输入整理出的练习范例，不是 AI 生成的答案。下一步：补充读者、风格或长度，让要求更具体。';
-  result.append(label, text, tip);
+}
+
+function showToast(message) {
+  const toast = document.getElementById('toast');
+  toast.textContent = message;
+  toast.classList.add('is-visible');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove('is-visible'), 2300);
 }
 
 document.querySelectorAll('[data-view]').forEach(button => button.addEventListener('click', () => showView(button.dataset.view)));
-document.querySelectorAll('[data-go]').forEach(button => button.addEventListener('click', () => showView(button.dataset.go)));
-document.getElementById('new-idea').addEventListener('click', setRandomIdea);
-document.getElementById('build-prompt').addEventListener('click', buildPrompt);
-document.getElementById('idea-input').addEventListener('input', event => {
-  document.getElementById('char-count').textContent = event.target.value.length + ' / 280';
-});
-document.querySelectorAll('[data-prompt]').forEach(button => button.addEventListener('click', () => {
-  const input = document.getElementById('idea-input');
-  input.value = button.dataset.prompt;
-  input.dispatchEvent(new Event('input'));
-  input.focus();
+document.querySelectorAll('[data-go="home"]').forEach(button => button.addEventListener('click', event => {
+  if (button.matches('a')) event.preventDefault();
+  showView('home');
 }));
+document.querySelectorAll('.daily-card [data-open-lesson]').forEach(button => button.addEventListener('click', () => beginLesson(button.dataset.openLesson)));
+document.getElementById('continue-adventure').addEventListener('click', () => {
+  const next = lessons.find(lesson => !completedLessons.includes(lesson.id)) || lessons[0];
+  beginLesson(next.id);
+});
 
-renderProgress();
-renderHomeLessons();
-renderLesson(activeLessonId);
+updateProgress();
+renderRouteCards();
+renderStudio();
