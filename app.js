@@ -152,7 +152,7 @@ function renderStory(lesson) {
   return `<article class="lesson-stage story-stage">
     <div class="story-art" aria-hidden="true"><span class="story-sparkle story-sparkle-one">✦</span><span class="story-sparkle story-sparkle-two">✧</span><span class="story-emoji">${lesson.icon}</span></div>
     <div class="story-copy"><span class="section-kicker">第 ${lesson.number} 关 · ${lesson.time}</span><h1 id="lesson-page-title">${lesson.storyTitle}</h1><p>${lesson.story}</p>
-      <div class="concept-pill"><span aria-hidden="true">💡</span><span>${lesson.concept}</span></div>
+      <div class="concept-pill"><span class="concept-icon" aria-hidden="true">💡</span><p>${lesson.concept}</p></div>
       <button class="button button-purple" type="button" data-action="next-step">我来找线索 <span aria-hidden="true">→</span></button>
     </div>
   </article>`;
