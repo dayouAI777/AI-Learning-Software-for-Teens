@@ -95,3 +95,39 @@ button:disabled { cursor: not-allowed; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
 .poster-preview strong { white-space: pre-line; }
+
+/* Chinese-first type scale and safe wrapping for mixed-width layouts. */
+body { font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", system-ui, sans-serif; font-size: 16px; line-height: 1.6; }
+.hero-card h1, .section-heading h2, .story-copy h1, .mission-heading h1, .quiz-stage h1, .reward-stage h1, .studio-intro h1 { letter-spacing: 0; line-height: 1.35; }
+.story-stage { grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr); }
+.story-art, .story-copy { min-width: 0; }
+.story-copy > p { font-size: 14px; line-height: 1.85; overflow-wrap: anywhere; }
+.concept-pill span:first-child { flex: 0 0 auto; }
+.concept-pill span:last-child { min-width: 0; flex: 1 1 0; font-size: inherit; overflow-wrap: anywhere; word-break: normal; }
+.concept-pill { font-size: 13px; line-height: 1.75; }
+.mission-choice > span:nth-child(2) { min-width: 0; flex: 1 1 auto; }
+.route-card p, .daily-card p, .studio-intro > p { font-size: 12px; line-height: 1.7; }
+.quiz-answer { font-size: 13px; line-height: 1.6; }
+.prompt-output p { overflow-wrap: anywhere; }
+
+@media (min-width: 681px) and (max-width: 1024px) {
+  .app-shell { padding-right: 22px; padding-left: 22px; }
+  .story-stage { grid-template-columns: minmax(190px, .72fr) minmax(0, 1.28fr); gap: 22px; padding: 24px; }
+  .story-art { min-height: 250px; }
+  .story-copy h1 { font-size: clamp(25px, 3.2vw, 32px); }
+  .concept-pill { gap: 8px; padding: 11px; }
+}
+@media (max-width: 680px) {
+  body { font-size: 15px; }
+  .hero-card p { font-size: 13px; }
+  .hero-kicker, .section-heading .section-kicker { font-size: 10px; }
+  .route-card h3 { font-size: 13px; }
+  .daily-card p, .studio-intro > p { font-size: 11px; }
+  .story-copy > p { font-size: 13px; }
+  .concept-pill { font-size: 12px; line-height: 1.7; }
+  .mission-heading p, .quiz-stage > p { font-size: 12px; }
+  .quiz-answer { font-size: 12px; }
+  .mission-choice strong { font-size: 12px; }
+  .site-footer { font-size: 10px; }
+  .studio-intro h1 { line-height: 1.35; }
+}
